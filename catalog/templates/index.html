@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Book for Adoption</h1>
+  <p>Welcome to Book for Adoption, a website developed by <em>WJZ Learning</em>!</p>
+  {% load static %}
+  <img id='sharing' src="{% static 'media/images/pic1.jpeg' %}" alt="knowledge shared is more than doubled" style="width:355px;height:340px;">
+  <h2>Dynamic content</h2>
+  <p>The collection has the following record counts:</p>
+  <ul>
+    <li><strong>Books:</strong> {{ num_books }}</li>
+    <li><strong>Copies:</strong> {{ num_instances }}</li>
+    <li><strong>Copies available for adoption:</strong> {{ num_instances_available }}</li>
+    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Genres:</strong> {{ num_genres }}</li>
+  </ul>
+
+  <p> You have visited this page {{num_visits}} time{{num_visits|pluralize}}.</p>
+{% endblock %}

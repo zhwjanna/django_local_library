@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Extend: {{ book_instance.book.title }}</h1>
+  <p>Candidate: {{ book_instance.candidate }}</p>
+  <p{% if book_instance.to_be_delayed %} class="text-danger"{% endif %}>Adopt by: {{ book_instance.shippable_date }}</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
